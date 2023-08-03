@@ -1,14 +1,13 @@
+import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
-import { NewsletterSubscribeInfo } from './NewsletterSubscribeInfo/NewsletterSubscribeInfo';
-import { newsletterStyle } from './newsletter.styles';
 import { subscribeToNewsletter } from '~/api/apiClient';
 import { ErrorType, ResponseType } from '~/model/types';
-import { useMutation } from '@tanstack/react-query';
+import { NewsletterSubscribeInfo } from './NewsletterSubscribeInfo/NewsletterSubscribeInfo';
+import { newsletterStyle } from './newsletter.styles';
 
 export const NewsletterSection = () => {
   const [email, setEmail] = useState<string>('');
   const subscribeMutation = useMutation(subscribeToNewsletter);
-  const isResolved = subscribeMutation.status !== 'idle';
   const { data, isError, error } = subscribeMutation;
   const responseType = isError ? ResponseType.ERROR : ResponseType.SUCCESS;
   const message = isError ? (error as ErrorType).response.data.message : data?.message;
@@ -35,7 +34,7 @@ export const NewsletterSection = () => {
           </button>
         </form>
       </div>
-      {isResolved && <NewsletterSubscribeInfo message={message} responseType={responseType}/>}
+      <NewsletterSubscribeInfo message={message} responseType={responseType} />
     </section>
   );
 };

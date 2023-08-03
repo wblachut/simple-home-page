@@ -10,5 +10,5 @@ export const NewsletterSubscribeInfo = ({
 }) => {
   const fontColor = globalStyles.color[`${responseType}Color`];
 
-  return <div style={{ color: fontColor, marginTop: '1rem' }}>{message ?? ''}</div>;
+  return <div style={{ color: fontColor, marginTop: '1rem', height: '4rem' }}>{message ?? ''}</div>;
 };
