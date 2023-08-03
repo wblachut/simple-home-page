@@ -10,7 +10,8 @@ const App = () => {
   const { isSuccess, isError, data: pagesData } = useQuery(['pages'], fetchPages);
   const homePageId = isSuccess && pagesData?.[0].id;
 
-  if (!homePageId || isError) return <span>Error...</span>;
+  if (isError) return <span>Error...</span>;
+  if (!homePageId) return <Loader />;
 
   return (
     <Suspense fallback={<Loader />}>
