@@ -1,10 +1,10 @@
 import { globalStyles } from '~/global/styles';
 
 export const navStyles = {
-  nav: {
+  header: {
     position: 'fixed' as const,
     width: '100vw',
-    padding: 0,
+    padding: '1rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -19,5 +19,11 @@ export const navStyles = {
     textDecoration: 'none',
     color: 'inherit',
     cursor: 'pointer',
+  },
+  nav: {
+    display: 'flex',
+    padding: '0px 10px',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 };

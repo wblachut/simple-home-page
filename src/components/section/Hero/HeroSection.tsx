@@ -9,7 +9,7 @@ const heroStyle = {
     justifyContent: 'center',
     height: '90vh',
   },
-  text: {
+  h1: {
     width: '30vw',
     fontSize: '2.5rem',
   },
@@ -29,7 +29,7 @@ interface HeroSectionProps {
 export const HeroSection = ({ text, imgSrc }: HeroSectionProps) => {
   return (
     <section style={heroStyle.section}>
-      <h3 style={heroStyle.text}>{text ?? ''}</h3>
+      <h1 style={heroStyle.h1}>{text ?? ''}</h1>
       <img src={heroImg ?? imgSrc} style={heroStyle.img} alt='hero-section-img' />
     </section>
   );

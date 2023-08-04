@@ -2,7 +2,7 @@ import { QueryFunction, useQuery } from '@tanstack/react-query';
 import { Suspense } from 'react';
 import { fetchSimplePage } from '~/api/apiClient';
 import { Section, SinglePage } from '~/api/model.dto';
-import { Loader } from '~/components/common/loader';
+import { Loader } from '~/components/common/Loader';
 import { HeroSection, NewsletterSection, TestimonialSection } from '~/components/section';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
 import { SectionType } from '~/model/types';

@@ -10,8 +10,8 @@ export interface PagesDataProp {
 }
 
 export const NavLinks = ({ pagesData }: PagesDataProp) => (
-  <nav style={navStyles.nav}>
-    <ul style={{ listStyle: 'none', display: 'flex', margin: 10, padding: '0px 10px' }}>
+  <header style={navStyles.header}>
+    <nav style={navStyles.nav}>
       <NavLink to='/' style={navStyles.logoBox}>
         <img src={Logo} alt='logo-svg' />
       </NavLink>
@@ -24,7 +24,7 @@ export const NavLinks = ({ pagesData }: PagesDataProp) => (
           {getLinkName(navElement.url)}
         </NavLink>
       ))}
-    </ul>
+    </nav>
     <ContactButton>Contact us</ContactButton>
-  </nav>
+  </header>
 );
