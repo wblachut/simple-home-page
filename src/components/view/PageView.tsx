@@ -2,7 +2,7 @@ import { QueryFunction, useQuery } from '@tanstack/react-query';
 import { Suspense } from 'react';
 import { fetchSimplePage } from '~/api/apiClient';
 import { Section, SinglePage } from '~/api/model.dto';
-import { Loader } from '~/components/common/Loader';
+import { LogoLoader } from '~/components/common/LogoLoader';
 import { HeroSection, NewsletterSection, TestimonialSection } from '~/components/section';
 import { mockSinglePageData } from '~/mock/mockSinglePageData';
 import { SectionType } from '~/model/types';
@@ -24,7 +24,7 @@ const PageView = ({ homePageId }: { homePageId: string }) => {
   const author = testimonialSection?.author ?? mockSinglePageData.sections[1].author;
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<LogoLoader />}>
       <main>
         <HeroSection text={heroText} imgSrc={heroSection?.img} />
         <TestimonialSection quote={quote} author={author} />

@@ -1,7 +1,7 @@
 import Logo from '~/assets/logo.svg';
 import { globalStyles } from '~/global/styles';
 
-export const Loader = () => {
+export const LogoLoader = () => {
   return (
     <div
       style={{
